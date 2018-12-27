@@ -57,6 +57,7 @@ function draw() {
       text("返回上级", 1.9*width/10 + 3*secondIcon.width/1.5 + secondIcon.width/3, 1.3*height/7 + secondIcon.height/3 + secondIcon.height/1.5);
     } //进入会员信息录入界面 
     else if (whichMenu==2) {
+      //这三个createInput()没法点进去输入，很神奇，不知道是为了什么，是不是mousePressed干扰了他
       inputName = createInput();
       inputName.position(width/2 - 50, height/4);
       inputAge = createInput();
