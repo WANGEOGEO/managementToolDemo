@@ -13,7 +13,7 @@ var allMembers, record, appointment, management, registration
 function createMainPage(pageWidth, pageHeight, image, shortcuts) {
     var member = new textButton (
             "会员管理",
-            pageWidth * 0.1, pageHeight * 0.15,
+            pageWidth * 0.2, pageHeight * 0.1,
             image
         );
         member.onClick = function () {
@@ -22,7 +22,7 @@ function createMainPage(pageWidth, pageHeight, image, shortcuts) {
         
     var finance = new textButton (
             "本店账务",
-            pageWidth * 0.3, pageHeight * 0.15,
+            pageWidth * 0.4, pageHeight * 0.1,
             image
         );
         finance.onClick = function () {
@@ -31,7 +31,7 @@ function createMainPage(pageWidth, pageHeight, image, shortcuts) {
         
     var staff = new textButton (
             "员工管理",
-            pageWidth * 0.1, pageHeight * 0.55,
+            pageWidth * 0.2, pageHeight * 0.5,
             image
         );
         staff.onClick = function () {
@@ -40,7 +40,7 @@ function createMainPage(pageWidth, pageHeight, image, shortcuts) {
         
     var invent = new textButton (
             "库存管理",
-            pageWidth * 0.3, pageHeight * 0.55,
+            pageWidth * 0.4, pageHeight * 0.5,
             image
         );
         invent.onClick = function () {

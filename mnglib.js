@@ -5,8 +5,8 @@
 var MenuType = {
     PRM_MAIN_MENU: 0,  // 主菜单
     SND_MEMBERSHIP: 1, // 会员菜单
-    SND_STAFF: 2,      // 员工管理
-    SND_FINANCE: 3,    // 财务
+    SND_FINANCE: 2,    // 财务
+    SND_STAFF: 3,      // 员工管理
     SND_INVENTORY: 4,  // 库存
 }
 
@@ -39,11 +39,11 @@ function button (layoutX, layoutY, asset) {
      * @param {number} y 
      */
     this.isClicked = isClicked;
-    function isClicked (x, y) {
+    function isClicked (x, y, scale) {
         return x >= this.layoutX 
-            && x <= this.layoutX + this.width 
+            && x <= this.layoutX + this.width*scale 
             && y >= this.layoutY
-            && y <= this.layoutY + this.height;
+            && y <= this.layoutY + this.height*scale;
     }
 }
 
@@ -62,10 +62,11 @@ function textButton (s, layoutX, layoutY, asset) {
     function drawImage(scale) {
         this.button.drawImage(scale);
         fill (0);
-        text (this.s, this.button.layoutX + this.button.asset.width / 2, this.button.layoutY + this.button.asset.height / 2);
+        text (this.s, this.button.layoutX + this.button.asset.width * 0.35, this.button.layoutY + this.button.asset.height * 0.35);
     }
 }
 
+//加几个常用图标，一直在界面上
 function shortcut (icon, layoutX, layoutY) {
     this.button = new button (layoutX, layoutY, icon);
     this.drawImage = drawImage;
