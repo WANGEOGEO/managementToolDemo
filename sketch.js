@@ -1,3 +1,5 @@
+// 如何调用另外一个js文件 https://www.jianshu.com/p/7dfd612693bc
+
 var bg;
 var whichMenu; //0为初始菜单，1为会员管理下的二级菜单，2为录入会员信息的界面，3为查看全体会员信息的界面。
 var firstIcon;
@@ -5,12 +7,18 @@ var secondIcon;
 var data = {}; // 读取原始JSON.
 var vips = []; //用来装会员的list。
 
+var mainPage;
+var testbutton;
+
 function loadData() {
 
 }
 
 function addVip() {
   //用来增加会员
+}
+function setPage (page) {
+  whichMenu = page;
 }
 
 function setup() {
@@ -21,21 +29,25 @@ function setup() {
     whichMenu = 0;
     textAlign(CENTER, CENTER);
     textSize(40);
+    
+    mainPage = createMainPage (windowWidth, windowHeight, firstIcon, []);
 }
   
 function draw() {
     background(bg);
     //还在主菜单时
     if (whichMenu==0) {
-      image(firstIcon, width/10, height/7, firstIcon.width/2, firstIcon.height/2); //top-left corner
-      image(firstIcon, 1.3*width/10 + firstIcon.width/2, height/7, firstIcon.width/2, firstIcon.height/2); //top-right corner
-      image(firstIcon, width/10, 1.3*height/7 + firstIcon.height/2, firstIcon.width/2, firstIcon.height/2); //bottom-left corner
-      image(firstIcon,1.3*width/10 + firstIcon.width/2, 1.3*height/7 + firstIcon.height/2, firstIcon.width/2, firstIcon.height/2); //bottom-right corner
-      fill(0); //set text color to black
-      text("会员管理", width/10+firstIcon.width/4, height/7+firstIcon.height/4); //左上角会员管理按钮的txt
-      text("账务管理", 1.3*width/10 + firstIcon.width/2+firstIcon.width/4, height/7+firstIcon.height/4); //右上角账务管理按钮的txt
-      text("员工管理", width/10+firstIcon.width/4,  1.3*height/7 + firstIcon.height/2+firstIcon.height/4); //左下角员工管理按钮的txt
-      text("库存管理", 1.3*width/10 + firstIcon.width/2+firstIcon.width/4, 1.3*height/7 + firstIcon.height/2+firstIcon.height/4); //右下角库存管理按钮的txt   
+      // image(firstIcon, width/10, height/7, firstIcon.width/2, firstIcon.height/2); //top-left corner
+      // image(firstIcon, 1.3*width/10 + firstIcon.width/2, height/7, firstIcon.width/2, firstIcon.height/2); //top-right corner
+      // image(firstIcon, width/10, 1.3*height/7 + firstIcon.height/2, firstIcon.width/2, firstIcon.height/2); //bottom-left corner
+      // image(firstIcon,1.3*width/10 + firstIcon.width/2, 1.3*height/7 + firstIcon.height/2, firstIcon.width/2, firstIcon.height/2); //bottom-right corner
+      mainPage.drawImage(1);
+
+      // fill(0); //set text color to black
+      // text("会员管理", width/10+firstIcon.width/4, height/7+firstIcon.height/4); //左上角会员管理按钮的txt
+      // text("账务管理", 1.3*width/10 + firstIcon.width/2+firstIcon.width/4, height/7+firstIcon.height/4); //右上角账务管理按钮的txt
+      // text("员工管理", width/10+firstIcon.width/4,  1.3*height/7 + firstIcon.height/2+firstIcon.height/4); //左下角员工管理按钮的txt
+      // text("库存管理", 1.3*width/10 + firstIcon.width/2+firstIcon.width/4, 1.3*height/7 + firstIcon.height/2+firstIcon.height/4); //右下角库存管理按钮的txt   
     } //进入会员管理菜单后 
     else if (whichMenu==1) {
       image(secondIcon, width/10, height/7, secondIcon.width/1.5, secondIcon.height/1.5); //第一排最左边
@@ -89,3 +101,4 @@ function draw() {
       }
     }
   } 
+
