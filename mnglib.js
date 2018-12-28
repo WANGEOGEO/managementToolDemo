@@ -26,7 +26,6 @@ var shortcut = {
  */
 function button (layoutX, layoutY, asset) {
     this.layoutX = layoutX; this.layoutY = layoutY;
-    this.width = width; this.height = height;
     this.asset = asset;
     this.drawImage = drawImage;
     function drawImage(scale) {
@@ -41,9 +40,9 @@ function button (layoutX, layoutY, asset) {
     this.isClicked = isClicked;
     function isClicked (x, y, scale) {
         return x >= this.layoutX 
-            && x <= this.layoutX + this.width*scale 
+            && x <= this.layoutX + this.asset.width * scale 
             && y >= this.layoutY
-            && y <= this.layoutY + this.height*scale;
+            && y <= this.layoutY + this.asset.height * scale;
     }
 }
 
@@ -62,7 +61,7 @@ function textButton (s, layoutX, layoutY, asset) {
     function drawImage(scale) {
         this.button.drawImage(scale);
         fill (0);
-        text (this.s, this.button.layoutX + this.button.asset.width * 0.35, this.button.layoutY + this.button.asset.height * 0.35);
+        text (this.s, this.button.layoutX + this.button.asset.width * scale/2, this.button.layoutY + this.button.asset.height * scale/2);
     }
 }
 
