@@ -8,6 +8,13 @@ var MenuType = {
     SND_FINANCE: 2,    // 财务
     SND_STAFF: 3,      // 员工管理
     SND_INVENTORY: 4,  // 库存
+    THR_ALLVIP: 5, //所有会员
+    THR_RESERVATION: 6, //预约服务
+    THR_MAYBE: 7, //可能会有
+    THR_NEWVIP: 8, //录入会员
+    THR_COMERECORD: 9, //来店记录
+    THR_ADVER: 10, //信息推广
+    THR_OTHER: 11, //其他项目
 }
 
 var shortcut = {
