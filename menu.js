@@ -47,17 +47,14 @@ function draw() {
       // text("账务管理", 1.3*width/10 + firstIcon.width/2+firstIcon.width/4, height/7+firstIcon.height/4); //右上角账务管理按钮的txt
       // text("员工管理", width/10+firstIcon.width/4,  1.3*height/7 + firstIcon.height/2+firstIcon.height/4); //左下角员工管理按钮的txt
       // text("库存管理", 1.3*width/10 + firstIcon.width/2+firstIcon.width/4, 1.3*height/7 + firstIcon.height/2+firstIcon.height/4); //右下角库存管理按钮的txt 
-      if (!mouseIsPressing && mouseIsPressed) {
-        mouseIsPressing = true;
-        for (var i = 0; i < mainPage.buttons.length; i++) {
-          if (mainPage.buttons[i].button.isClicked(mouseX, mouseY, 1)) {
-              whichMenu = i + 1;
-          }
-        }
-      } else {
-        mouseIsPressing = false;
-      }
-    } //进入会员管理菜单后 
+    //   if (!mouseIsPressing && mouseIsPressed) {
+    //     mouseIsPressing = true;
+
+    //   } else {
+    //     mouseIsPressing = false;
+    //   }
+      
+     } //进入会员管理菜单后 
     else if (whichMenu==1) {
       // image(secondIcon, width/10, height/7, secondIcon.width/1.5, secondIcon.height/1.5); //第一排最左边
       // image(secondIcon, 1.3*width/10 + secondIcon.width/1.5, height/7, secondIcon.width/1.5, secondIcon.height/1.5); //第一排中间
@@ -114,4 +111,19 @@ function draw() {
   //     }
   //   }
   //} 
-
+  function mouseClicked() {
+    for (var i = 0; i < mainPage.buttons.length; i++) {
+      if (mainPage.buttons[i].button.isClicked(mouseX, mouseY, 0.7)) {
+        if (i==0) {
+          window.open("http://127.0.0.1:5500/vipMana.html");
+        }  else if (i==1) {
+          window.open("http://127.0.0.1:5500/businessRecord.html");
+        } else if (i==2) {
+          window.open("http://127.0.0.1:5500/emploMana.html");
+        } else if (i==3) {
+          window.open("http://127.0.0.1:5500/stockMana.html");
+        }
+      }
+    }
+    return false;
+  }
