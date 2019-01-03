@@ -9,6 +9,7 @@ var vips = []; //用来装会员的list。
 var vipManaMenu;
 var mainPage;
 var testbutton;
+var scale;
 
 function loadData() {
 
@@ -18,7 +19,7 @@ function addVip() {
   //用来增加会员
 }
 function setPage (page) {
-  whichMenu = page;
+  window.open("http://127.0.0.1:5500/vipMana.html");
 }
 
 function setup() {
@@ -114,15 +115,16 @@ function draw() {
   function mouseClicked() {
     for (var i = 0; i < mainPage.buttons.length; i++) {
       if (mainPage.buttons[i].button.isClicked(mouseX, mouseY, 0.7)) {
-        if (i==0) {
-          window.open("http://127.0.0.1:5500/vipMana.html");
-        }  else if (i==1) {
-          window.open("http://127.0.0.1:5500/businessRecord.html");
-        } else if (i==2) {
-          window.open("http://127.0.0.1:5500/emploMana.html");
-        } else if (i==3) {
-          window.open("http://127.0.0.1:5500/stockMana.html");
-        }
+        // if (i==0) {
+        //   window.open("http://127.0.0.1:5500/vipMana.html");
+        // }  else if (i==1) {
+        //   window.open("http://127.0.0.1:5500/businessRecord.html");
+        // } else if (i==2) {
+        //   window.open("http://127.0.0.1:5500/emploMana.html");
+        // } else if (i==3) {
+        //   window.open("http://127.0.0.1:5500/stockMana.html");
+        // }
+        mainPage.buttons[i].onClick;
       }
     }
     return false;
